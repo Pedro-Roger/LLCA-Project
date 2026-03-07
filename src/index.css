@@ -1,24 +1,48 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
+
   --color-primary: #262B5E;
+  /* Azul Marinho LLCA */
+  --color-primary-dark: #1e224a;
+
   --color-secondary: #009443;
+  /* Verde LLCA */
+  --color-secondary-dark: #007a37;
+
   --color-accent-gray: #CACDCC;
+
   --color-bg-light: #f6f6f7;
   --color-bg-dark: #0f172a;
+
+  --color-card-dark: #1e293b;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
   body {
-    @apply bg-bg-light text-slate-900 font-sans transition-colors duration-300;
+    @apply bg-bg-light text-slate-900 font-sans antialiased overflow-hidden selection:bg-secondary/30 selection:text-secondary;
   }
 
   .dark body {
     @apply bg-bg-dark text-slate-100;
   }
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap');
+  /* Custom Scrollbar for the main content area */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors;
+  }
+}
