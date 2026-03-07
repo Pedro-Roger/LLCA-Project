@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #262B5E;
+  --color-secondary: #009443;
+  --color-accent-gray: #CACDCC;
+  --color-bg-light: #f6f6f7;
+  --color-bg-dark: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-slate-900 font-sans transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-bg-dark text-slate-100;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
