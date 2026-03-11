@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import heroVideo from "./assets/Video.mp4";
 import logo from "./assets/logo_llca.png";
 import llcaLab from "./assets/llca_lab.png";
@@ -142,19 +142,26 @@ const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Language) => v
 const Hero = ({ lang }: { lang: Language }) => {
   const t = translations[lang].hero;
   return (
-  <section id="home" className="relative w-full h-full min-h-[85vh] flex items-center overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] border border-white/10 shadow-2xl bg-card-dark isolate">
-    {/* Abstract/Video Background */}
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-screen"
-    >
-      <source src={heroVideo} type="video/mp4" />
-    </video>
-    <div className="absolute inset-0 bg-linear-to-b from-card-dark/40 via-transparent to-card-dark/90" />
-    <div className="absolute inset-0 bg-linear-to-r from-card-dark/80 via-transparent to-transparent" />
+  <section 
+    id="home" 
+    className="relative w-full h-full min-h-[85vh] flex items-center rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] border border-white/10 shadow-2xl bg-card-dark isolate transform-gpu"
+  >
+    {/* Background Wrapper for Clipping - Essential for mobile rounded corners */}
+    <div className="absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        webkit-playsinline="true"
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-screen"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-linear-to-b from-card-dark/40 via-transparent to-card-dark/90" />
+      <div className="absolute inset-0 bg-linear-to-r from-card-dark/80 via-transparent to-transparent" />
+    </div>
 
     <div className="relative z-10 w-full px-6 py-32 sm:px-12 lg:px-20 h-full flex flex-col justify-center">
       <motion.div
@@ -275,6 +282,35 @@ const Values = ({ lang }: { lang: Language }) => {
 
 const Contact = ({ lang }: { lang: Language }) => {
   const t = translations[lang].contact;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'duvida',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulating an API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: 'duvida', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }, 1500);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
   <section id="contato" className="px-6 py-24 sm:px-12 relative overflow-hidden">
     {/* Glow background */}
@@ -316,12 +352,30 @@ const Contact = ({ lang }: { lang: Language }) => {
         </div>
 
         <div className="relative">
-          <form className="flex flex-col gap-6 bg-bg-dark rounded-[2.5rem] p-8 sm:p-10 border border-white/5 relative z-10">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 bg-bg-dark rounded-[2.5rem] p-8 sm:p-10 border border-white/5 relative z-10">
             <h3 className="text-2xl font-bold text-white mb-4">{t.form.title}</h3>
+            
+            <AnimatePresence>
+              {isSubmitted && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-green-500/20 border border-green-500 text-green-200 px-6 py-4 rounded-2xl text-sm font-medium"
+                >
+                  Mensagem enviada com sucesso! Entraremos em contato em breve.
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.name}</label>
               <input
                 type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder={t.form.namePlaceholder}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:border-secondary/50 focus:bg-white/10 outline-none transition-all"
               />
@@ -330,13 +384,22 @@ const Contact = ({ lang }: { lang: Language }) => {
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.email}</label>
               <input
                 type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
                 placeholder={t.form.emailPlaceholder}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:border-secondary/50 focus:bg-white/10 outline-none transition-all"
               />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.subject}</label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:border-secondary/50 focus:bg-white/10 outline-none transition-all appearance-none cursor-pointer">
+              <select 
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:border-secondary/50 focus:bg-white/10 outline-none transition-all appearance-none cursor-pointer"
+              >
                 <option value="duvida" className="bg-bg-dark">{t.form.subjects.general}</option>
                 <option value="exame" className="bg-bg-dark">{t.form.subjects.exam}</option>
                 <option value="resultado" className="bg-bg-dark">{t.form.subjects.results}</option>
@@ -346,16 +409,26 @@ const Contact = ({ lang }: { lang: Language }) => {
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.message}</label>
               <textarea
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
                 placeholder={t.form.messagePlaceholder}
                 rows={4}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:border-secondary/50 focus:bg-white/10 outline-none transition-all resize-none"
               />
             </div>
             <button
-              type="button"
-              className="w-full rounded-2xl bg-secondary hover:brightness-110 px-8 py-4 text-base font-bold text-white transition-all cursor-pointer mt-2"
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full rounded-2xl bg-secondary hover:brightness-110 px-8 py-4 text-base font-bold text-white transition-all cursor-pointer mt-2 flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              {t.form.submit}
+              {isSubmitting ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Enviando...
+                </>
+              ) : t.form.submit}
             </button>
           </form>
         </div>
