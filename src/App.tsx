@@ -181,15 +181,6 @@ const Hero = ({ lang }: { lang: Language }) => {
       </motion.div>
     </div>
 
-    {/* Bottom Left Call to Action Pill */}
-    <div className="absolute bottom-8 left-6 sm:left-12 z-20">
-      <button className="flex items-center gap-4 rounded-full bg-card-dark/80 backdrop-blur-xl border border-white/10 p-2 pr-6 hover:bg-card-dark transition-colors cursor-pointer group">
-        <div className="bg-primary text-white rounded-full p-3 group-hover:scale-110 transition-transform">
-          <ArrowRight className="w-5 h-5 -rotate-45" />
-        </div>
-        <span className="text-sm font-medium text-white">{t.services}</span>
-      </button>
-    </div>
   </section>
   );
 };
