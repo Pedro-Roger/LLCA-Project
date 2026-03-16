@@ -6,31 +6,32 @@
 @theme {
   --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
 
+  /* Cores Baseada na Paleta "Verde" fornecida */
+  --color-brand-light: #e4e6d9;
+  --color-brand-medium-light: #c0cfb2;
+  --color-brand-medium: #8ba888;
+  --color-brand-dark: #04441f;
+
   --color-primary: #262B5E;
-  /* Azul Marinho LLCA */
-  --color-primary-dark: #1e224a;
-
   --color-secondary: #009443;
-  /* Verde LLCA */
-  --color-secondary-dark: #007a37;
+  
+  /* Variáveis de Tema (Light por padrão) */
+  --color-bg-app: #f6f6f7;
+  --color-text-main: #1e293b;
+  --color-card-bg: #ffffff;
+  --color-border-main: rgba(0, 0, 0, 0.08);
+}
 
-  --color-accent-gray: #CACDCC;
-
-  --color-bg-light: #f6f6f7;
-  --color-bg-dark: #0f172a;
-
-  --color-card-dark: #1e293b;
-
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+.dark {
+  --color-bg-app: #0f172a;
+  --color-text-main: #f8fafc;
+  --color-card-bg: #1e293b;
+  --color-border-main: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
   body {
-    @apply bg-bg-light text-slate-900 font-sans antialiased overflow-hidden selection:bg-secondary/30 selection:text-secondary;
-  }
-
-  .dark body {
-    @apply bg-bg-dark text-slate-100;
+    @apply bg-bg-app text-text-main font-sans antialiased overflow-hidden selection:bg-secondary/30 selection:text-secondary transition-colors duration-300;
   }
 
   /* Custom Scrollbar for the main content area */

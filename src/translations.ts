@@ -20,24 +20,13 @@
        p2: "O centro atua como um hub de inovação e desenvolvimento de microbiomas, a partir da visão sistêmica de Altamiro Alvernaz, que desenvolveu a <strong>metodologia de Equilíbrio do Ambiente Produtivo</strong> e o <strong>conceito de microbiomas projetados</strong>, base científica da <strong>Tecnologia de Consórcio Probiótico</strong> (TCP)..",
       p3: "A partir dessa visão, o LLCA trabalha com os recursos naturais dos microorganismos para restaurar o equilíbrio e funcionalidade ambiental e humana, visando um mundo mais saudável."
           },
-          mission: {
-            tag: "Propósito",
-            title: "Nossa Missão",
+          foundation: {
+            tag: "Diretrizes",
+            title: "Nossa Essência",
             items: [
-              { title: "Mundo Melhor", desc: "Construir um mundo melhor através dos microrganismos e biotecnologia." },
-              { title: "Melhorar Vidas", desc: "Transformar o amor e a ciência em um propósito prático para a sociedade." },
-              { title: "Soluções Inovadoras", desc: "Criar tecnologias baseadas em microbiomas para agricultura, saúde e energia." },
-              { title: "Impacto Real", desc: "Atuar como hub de inovação que apoia ideias e acelera soluções para o mercado." }
-            ]
-          },
-          values: {
-            tag: "Princípios",
-            title: "Nossos Valores",
-            items: [
-              { title: "Ciência e Inovação", desc: "Compromisso com a pesquisa e o desenvolvimento de soluções de ponta." },
-              { title: "Sustentabilidade", desc: "Respeito ao meio ambiente e busca por práticas sustentáveis." },
-              { title: "Impacto Social", desc: "Foco em gerar benefícios para a sociedade e o planeta." },
-              { title: "Ética e Transparência", desc: "Atuação com integridade e clareza em todas as relações." }
+              { title: "Propósito", desc: "Compreender, organizar e aplicar os microbiomas como infraestrutura biológica da vida, desenvolvendo conhecimento e tecnologias capazes de restaurar o equilíbrio dos sistemas naturais e produtivos e de contribuir para um futuro regenerativo para o planeta." },
+              { title: "Missão", desc: "Transformar conhecimento microbiológico em tecnologias capazes de restaurar o equilíbrio dos sistemas produtivos e da microbiota, aumentando a eficiência biológica da produção de alimentos, promovendo a saúde humana e impulsionando a regeneração ambiental em escala global. O Instituto desenvolve, valida e transfere tecnologias baseadas na organização funcional de microbiomas e na engenharia ecológica, aplicadas à agricultura, aquicultura, pecuária e aos sistemas ambientais." },
+              { title: "Visão", desc: "Ser uma referência internacional no desenvolvimento de microbiomas projetados como infraestrutura biológica para a produção sustentável de alimentos e para a regeneração dos ecossistemas." }
             ]
           },
           services: {
@@ -53,12 +42,29 @@
           contact: {
             tag: "Contato",
             title: "Fale Conosco",
+            desc: "Entre em contato conosco para saber mais sobre nossas soluções, fazer uma parceria ou tirar dúvidas. Estamos prontos para ajudar.",
             form: {
+              title: "Envie uma Mensagem",
               name: "Nome",
-              email: "Email",
+              namePlaceholder: "Seu nome completo",
+              email: "E-mail",
+              emailPlaceholder: "seu@email.com",
+              subject: "Assunto",
+              subjects: {
+                general: "Dúvida Geral",
+                exam: "Exames e Análises",
+                results: "Resultados",
+                donate: "Apoio e Doação"
+              },
               message: "Mensagem",
-              send: "Enviar"
+              messagePlaceholder: "Como podemos ajudar?",
+              submit: "Enviar Mensagem"
             }
+          },
+          footer: {
+            rights: "Todos os direitos reservados.",
+            privacy: "Política de Privacidade",
+            terms: "Termos de Uso"
           }
         },
         en: {
@@ -81,24 +87,13 @@
             p1: "The LLCA institute emerged in 2025 as the result of a journey initiated by Altamiro Alvernaz to fight his mother's Alzheimer's disease.",
             p2: "The center acts as an innovation hub, developing engineered microbiomas that benefit sectors such as agriculture, human health, and sanitation. The initiative consolidates years of technical expertise into a mission focused on positive social and technological impact."
           },
-          mission: {
-            tag: "Purpose",
-            title: "Our Mission",
+          foundation: {
+            tag: "Guidelines",
+            title: "Our Essence",
             items: [
-              { title: "Better World", desc: "Build a better world through microorganisms and biotechnology." },
-              { title: "Improve Lives", desc: "Transform love and science into a practical purpose for society." },
-              { title: "Innovative Solutions", desc: "Create microbiome-based technologies for agriculture, health, and energy." },
-              { title: "Real Impact", desc: "Act as an innovation hub that supports ideas and accelerates solutions for the market." }
-            ]
-          },
-          values: {
-            tag: "Principles",
-            title: "Our Values",
-            items: [
-              { title: "Science and Innovation", desc: "Commitment to research and development of cutting-edge solutions." },
-              { title: "Sustainability", desc: "Respect for the environment and the pursuit of sustainable practices." },
-              { title: "Social Impact", desc: "Focus on generating benefits for society and the planet." },
-              { title: "Ethics and Transparency", desc: "Acting with integrity and clarity in all relationships." }
+              { title: "Purpose", desc: "To understand, organize, and apply microbiomes as the biological infrastructure of life, developing knowledge and technologies capable of restoring the balance of natural and productive systems and contributing to a regenerative future for the planet." },
+              { title: "Mission", desc: "Transform microbiological knowledge into technologies capable of restoring the balance of productive systems and microbiota, increasing the biological efficiency of food production, promoting human health, and driving environmental regeneration on a global scale. The Institute develops, validates, and transfers technologies based on the functional organization of microbiomes and ecological engineering, applied to agriculture, aquaculture, livestock, and environmental systems." },
+              { title: "Vision", desc: "To be an international reference in the development of engineered microbiomes as biological infrastructure for sustainable food production and ecosystem regeneration." }
             ]
           },
           services: {
@@ -114,12 +109,29 @@
           contact: {
             tag: "Contact",
             title: "Contact Us",
+            desc: "Get in touch with us to learn more about our solutions, partner with us, or ask questions. We are ready to help.",
             form: {
+              title: "Send a Message",
               name: "Name",
+              namePlaceholder: "Your full name",
               email: "Email",
+              emailPlaceholder: "your@email.com",
+              subject: "Subject",
+              subjects: {
+                general: "General Inquiry",
+                exam: "Exams and Analysis",
+                results: "Results",
+                donate: "Support and Donation"
+              },
               message: "Message",
-              send: "Send"
+              messagePlaceholder: "How can we help?",
+              submit: "Send Message"
             }
+          },
+          footer: {
+            rights: "All rights reserved.",
+            privacy: "Privacy Policy",
+            terms: "Terms of Use"
           }
         }
       };
