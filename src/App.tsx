@@ -424,9 +424,14 @@ const Footer = ({ lang }: { lang: Language }) => {
   <footer className="px-6 py-12 sm:px-12 border-t border-border-main mt-12 bg-card-bg transition-colors duration-300">
     <div className="flex flex-col gap-8 md:flex-row items-center justify-between">
       <div className="flex items-center gap-4">
-        <h2 className="text-2xl font-black text-text-main tracking-widest flex items-center gap-2">
-          LLCA
-        </h2>
+        <div className="flex h-10 w-28 items-center">
+          <img
+            src={logo}
+            alt="LLCA Logo"
+            className="h-full w-auto object-contain"
+            style={{ filter: 'invert(1) brightness(0.2)' }}
+          />
+        </div>
         <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
         <p className="text-text-main/40 text-sm">© {new Date().getFullYear()} {t.rights}</p>
       </div>

@@ -8,7 +8,7 @@
      },
      hero: {
        title1: "Laboratórios",
-       title2: "Lígia Costa",
+       title2: "Lygia Costa",
        title3: "Alvernaz",
        subtitle: "Transformando o conhecimento científico em ferramentas para um mundo mais sustentável através da biotecnologia.",
        services: "Nossos Serviços"
@@ -76,7 +76,7 @@
           },
           hero: {
             title1: "Laboratories",
-            title2: "Lígia Costa",
+            title2: "Lygia Costa",
       title3: "Alvernaz",
             subtitle: "Transforming scientific knowledge into tools for a more sustainable world through biotechnology and engineered microbiomes.",
             services: "Our Services"
