@@ -424,7 +424,7 @@ const Footer = ({ lang }: { lang: Language }) => {
   <footer className="px-6 py-12 sm:px-12 border-t border-border-main mt-12 bg-card-bg transition-colors duration-300">
     <div className="flex flex-col gap-8 md:flex-row items-center justify-between">
       <div className="flex items-center gap-4">
-        <div className="flex h-10 w-28 items-center">
+        <div className="flex h-12 w-32 items-center">
           <img
             src={logo}
             alt="LLCA Logo"
