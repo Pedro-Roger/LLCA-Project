@@ -17,7 +17,7 @@
        tag: "Sobre Nós",
        title: "Nossa História",
        p1: "O instituto LLCA surgiu em 2025 como resultado de uma trajetória iniciada por Altamiro Alvernaz para combater o Alzheimer de sua mãe.",
-       p2: "O centro atua como um hub de inovação e desenvolvimento de microbiomas, a partir da visão sistêmica de Altamiro Alvernaz, que desenvolveu a <strong>metodologia de Equilíbrio do Ambiente Produtivo</strong> e o <strong>conceito de microbiomas projetados</strong>, base científica da <strong>Tecnologia de Consórcio Probiótico</strong> (TCP)..",
+       p2: "O Centro atua como um hub de inovação e desenvolvimento da Engenharia Ecológica de Microbiomas, desenvolvida a partir da visão sistêmica de Altamiro Alvernaz, que também desenvolveu a <strong>metodologia de Equilíbrio do Ambiente Produtivo</strong> e o <strong>conceito de microbiomas projetados</strong>, base científica da <strong>Tecnologia de Consórcio Probiótico</strong> (TCP)..",
       p3: "A partir dessa visão, o LLCA trabalha com os recursos naturais dos microorganismos para restaurar o equilíbrio e funcionalidade ambiental e humana, visando um mundo mais saudável."
           },
           foundation: {

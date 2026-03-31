@@ -184,10 +184,13 @@ const Hero = ({ lang, isDark }: { lang: Language, isDark: boolean }) => {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="flex flex-col gap-6 max-w-4xl mt-12"
       >
-        <h1 className="text-5xl sm:text-7xl lg:text-[7rem] font-black leading-[0.9] tracking-tighter text-text-main uppercase drop-shadow-2xl">
-          {t.title1} <br />
-          <span className="text-blue-500 dark:text-blue-400">{t.title2}</span> {t.title3}
-        </h1>
+        <div className="w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[720px] drop-shadow-2xl">
+          <img
+            src={logo}
+            alt="LLCA Logo"
+            className="h-auto w-full object-contain"
+          />
+        </div>
         <p className="max-w-md text-base sm:text-lg leading-relaxed text-text-main/70 font-light backdrop-blur-xs">
           {t.subtitle}
         </p>
