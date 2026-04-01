@@ -319,7 +319,7 @@ const Contact = ({ lang }: { lang: Language }) => {
               </div>
               <div>
                 <p className="text-sm text-text-main/50 font-bold uppercase tracking-wider">{t.form.email}</p>
-                <p className="text-text-main font-medium">contato@llca.com.br</p>
+                <p className="text-text-main font-medium">contato@llca.org.br</p>
               </div>
             </div>
             <div className="flex items-center gap-6 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-border-main">
