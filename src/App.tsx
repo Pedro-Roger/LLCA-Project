@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import React, { useState } from "react";
 import heroVideo from "./assets/Video.mp4";
-import logo from "./assets/logo_llca.png";
+import logo from "./assets/logo oficial.png";
 import llcaLab from "./assets/llca_lab.png";
 import { translations } from "./translations";
 import {
@@ -184,7 +184,7 @@ const Hero = ({ lang, isDark }: { lang: Language, isDark: boolean }) => {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="flex flex-col gap-6 max-w-4xl mt-12"
       >
-        <div className="w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[720px] drop-shadow-2xl">
+        <div className="w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[720px] drop-shadow-2xl -ml-4 sm:-ml-6 lg:-ml-12">
           <img
             src={logo}
             alt="LLCA Logo"
