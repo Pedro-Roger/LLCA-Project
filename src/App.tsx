@@ -14,7 +14,6 @@ import {
   Globe,
   Share2,
   Mail,
-  Phone,
   MapPin,
   Send,
   Linkedin,
@@ -169,12 +168,12 @@ const Hero = ({ lang, isDark }: { lang: Language, isDark: boolean }) => {
         playsInline
         webkit-playsinline="true"
         preload="auto"
-        className={`absolute inset-0 h-full w-full object-cover mix-blend-screen transition-opacity duration-500 ${isDark ? 'opacity-60' : 'opacity-20'}`}
+        className={`absolute inset-0 h-full w-full object-cover mix-blend-screen transition-opacity duration-500 ${isDark ? 'opacity-60' : 'opacity-38'}`}
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
-      <div className={`absolute inset-0 bg-linear-to-b ${isDark ? 'from-card-bg/40 via-transparent to-card-bg/90' : 'from-card-bg/20 via-transparent to-card-bg/40'}`} />
-      <div className={`absolute inset-0 bg-linear-to-r ${isDark ? 'from-card-bg/80 via-transparent to-transparent' : 'from-card-bg/60 via-transparent to-transparent'}`} />
+      <div className={`absolute inset-0 bg-linear-to-b ${isDark ? 'from-card-bg/40 via-transparent to-card-bg/90' : 'from-card-bg/10 via-transparent to-card-bg/24'}`} />
+      <div className={`absolute inset-0 bg-linear-to-r ${isDark ? 'from-card-bg/80 via-transparent to-transparent' : 'from-card-bg/38 via-transparent to-transparent'}`} />
     </div>
 
     <div className="relative z-10 w-full px-6 py-32 sm:px-12 lg:px-20 h-full flex flex-col justify-center">
@@ -320,15 +319,6 @@ const Contact = ({ lang }: { lang: Language }) => {
               <div>
                 <p className="text-sm text-text-main/50 font-bold uppercase tracking-wider">{t.form.email}</p>
                 <p className="text-text-main font-medium">contato@llca.org.br</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-6 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-border-main">
-              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary shrink-0">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-sm text-text-main/50 font-bold uppercase tracking-wider">Telefone</p>
-                <p className="text-text-main font-medium">+55 (11) 9999-9999</p>
               </div>
             </div>
           </div>
