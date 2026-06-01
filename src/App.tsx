@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from "motion/react";
 import React, { useState } from "react";
 import heroVideo from "./assets/Video.mp4";
 import logo from "./assets/logo oficial.png";
+import logoDark from "./assets/logo oficial_dark.png";
+import logoSideFooter from "./assets/logo oficial_side_footer.png";
+import logo2 from "./assets/2.png";
 import llcaLab from "./assets/llca_lab.png";
 import { translations } from "./translations";
 import {
@@ -40,7 +43,7 @@ const Sidebar = ({ isDark }: { isDark: boolean }) => (
     <div className="flex flex-col items-center gap-12">
       <div className="origin-center whitespace-nowrap mt-4 scale-125">
         <div className="flex h-12 w-32 items-center justify-center">
-          <img src={logo} alt="LLCA Logo" className="h-full w-auto object-contain dark:invert-0 light:invert" style={{ filter: isDark ? 'none' : 'invert(1) brightness(0.2)' }} />
+          <img src={isDark ? logo : logoDark} alt="LLCA Logo" className="h-full w-auto object-contain" />
         </div>
       </div>
     </div>
@@ -185,7 +188,7 @@ const Hero = ({ lang, isDark }: { lang: Language, isDark: boolean }) => {
       >
         <div className="w-full max-w-[320px] sm:max-w-[460px] lg:max-w-[720px] drop-shadow-2xl -ml-4 sm:-ml-6 lg:-ml-12">
           <img
-            src={logo}
+            src={isDark ? logo : logoDark}
             alt="LLCA Logo"
             className="h-auto w-full object-contain"
           />
@@ -419,10 +422,9 @@ const Footer = ({ lang }: { lang: Language }) => {
       <div className="flex items-center gap-4">
         <div className="flex h-12 w-32 items-center">
           <img
-            src={logo}
+            src={logo2}
             alt="LLCA Logo"
             className="h-full w-auto object-contain"
-            style={{ filter: 'invert(1) brightness(0.2)' }}
           />
         </div>
         <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
