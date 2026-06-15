@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import type { Post } from '../mocks/blogPosts';
 
 const categoryColor: Record<string, string> = {
-  'Ciência':       'bg-blue-500/10 text-blue-600 dark:text-blue-400',
-  'Institucional': 'bg-primary/10 text-primary dark:text-blue-300',
-  'Mercado':       'bg-secondary/10 text-secondary',
-  'Meio Ambiente': 'bg-green-500/10 text-green-600 dark:text-green-400',
+  'Ciência':       'bg-moss/20 text-forest',
+  'Institucional': 'bg-navy/10 text-navy dark:bg-moss/10 dark:text-moss',
+  'Mercado':       'bg-forest/10 text-forest',
+  'Meio Ambiente': 'bg-moss/30 text-forest',
 };
 
 export default function PostCard({ post }: { post: Post; key?: string }) {
