@@ -249,7 +249,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Transformando o conhecimento científico em ferramentas para um mundo mais sustentável através da biotecnologia.',
+      tagline: 'Engenharia ecológica de microbiomas.',
       address: 'Pouso Alto, Minas Gerais — Brasil',
       nav: 'Navegação',
       contactLabel: 'Contato',
@@ -511,7 +511,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Transforming scientific knowledge into tools for a more sustainable world through biotechnology.',
+      tagline: 'Ecological microbiome engineering.',
       address: 'Pouso Alto, Minas Gerais — Brazil',
       nav: 'Navigation',
       contactLabel: 'Contact',
