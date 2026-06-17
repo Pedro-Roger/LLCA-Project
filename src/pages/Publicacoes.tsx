@@ -117,7 +117,7 @@ export default function Publicacoes() {
             <input
               type="email"
               placeholder={t.newsletter.placeholder}
-              className="flex-1 bg-black/5 dark:bg-white/5 border border-border-main rounded-2xl px-6 py-4 text-text-main placeholder:text-text-main/30 outline-none focus:border-secondary/50 transition-all text-sm"
+              className="flex-1 bg-bg-app border border-border-main rounded-2xl px-6 py-4 text-text-main placeholder:text-neutral/60 outline-none focus:border-secondary/50 transition-all text-sm"
             />
             <button className="rounded-2xl bg-secondary px-6 py-4 text-sm font-bold text-white hover:brightness-110 transition-all whitespace-nowrap">
               {t.newsletter.cta}

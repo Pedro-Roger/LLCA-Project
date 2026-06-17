@@ -5,9 +5,9 @@ import { LangContext } from '../App';
 
 const statusColor = (status: string) => {
   const s = status.toLowerCase();
-  if (s.includes('comercial') || s.includes('commercial')) return 'text-green-600 dark:text-green-400 bg-green-500/10 border-green-500/20';
-  if (s.includes('validado') || s.includes('validated')) return 'text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20';
-  return 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20';
+  if (s.includes('comercial') || s.includes('commercial')) return 'text-forest bg-forest/10 border-forest/20';
+  if (s.includes('validado') || s.includes('validated')) return 'text-navy bg-navy/10 border-navy/20';
+  return 'text-neutral bg-neutral/10 border-neutral/20';
 };
 
 export default function Areas() {
