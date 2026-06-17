@@ -11,7 +11,7 @@ export default function Tecnologia() {
     <div className="flex flex-col gap-4 pt-24">
       {/* BLOCK 1 — VIRADA DE PARADIGMA */}
       <section className="px-6 py-16 sm:px-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="">
           <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Ciência & Tecnologia</span>
           <motion.h1
             initial={{ y: 20, opacity: 0 }}

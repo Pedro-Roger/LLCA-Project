@@ -11,7 +11,7 @@ export default function Historia() {
     <div className="flex flex-col gap-4 pt-24">
       {/* BLOCK 1 — A ORIGEM */}
       <section className="px-6 py-16 sm:px-12">
-        <div className="max-w-4xl mx-auto">
+        <div>
           <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Nossa História</span>
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
@@ -63,7 +63,7 @@ export default function Historia() {
 
       {/* BLOCK 3 — O QUE É O LLCA HOJE */}
       <section className="px-6 py-12 sm:px-12 pb-24">
-        <div className="max-w-4xl mx-auto">
+        <div>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-text-main uppercase mb-8">
             {t.block3.headline}
           </h2>
