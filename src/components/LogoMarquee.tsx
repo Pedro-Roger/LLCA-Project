@@ -10,7 +10,7 @@ import fgvImg       from '../assets/logos/fgv.png';
 import fsBioenergiaImg from '../assets/logos/fs-bioenergia.svg';
 import inpasaImg    from '../assets/logos/inpasa.png';
 import copercamposImg from '../assets/logos/copercampos.png';
-import grupoBdmImg  from '../assets/logos/grupo-bdm.webp';
+import grupoBdmImg  from '../assets/logos/grupo-bdm.png';
 import novaPiratiningaImg from '../assets/logos/nova-piratininga.png';
 
 interface Institution {
@@ -62,21 +62,18 @@ function TextBadge({ institution }: { institution: Institution }) {
 
 function Card({ institution }: { institution: Institution; key?: string }) {
   return (
-    <div className="group flex-shrink-0 mx-6 flex flex-col items-center gap-2 cursor-default">
+    <div className="group flex-shrink-0 mx-8 flex items-center justify-center cursor-default">
       <div className="h-12 flex items-center justify-center">
         {institution.logo ? (
           <img
             src={institution.logo}
             alt={institution.name}
-            className="max-h-12 w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-400"
+            className="max-h-12 w-auto object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-400"
           />
         ) : (
           <TextBadge institution={institution} />
         )}
       </div>
-      <span className="text-[11px] font-medium text-neutral/50 group-hover:text-navy text-center leading-snug transition-colors duration-300 whitespace-nowrap">
-        {institution.name}
-      </span>
     </div>
   );
 }
