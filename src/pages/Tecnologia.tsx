@@ -79,14 +79,7 @@ export default function Tecnologia() {
         </div>
       </section>
 
-      {/* BLOCK 5 — INFRAESTRUTURA (placeholder) */}
-      <section className="px-6 py-12 sm:px-12">
-        <div className="rounded-4xl border border-border-main bg-card-bg h-48 flex items-center justify-center">
-          <p className="text-text-main/30 text-sm font-medium uppercase tracking-widest">Render 3D — Laboratório LLCA (em breve)</p>
-        </div>
-      </section>
-
-      {/* BLOCK 6 — MODELO DE OPERAÇÃO */}
+{/* BLOCK 6 — MODELO DE OPERAÇÃO */}
       <section className="px-6 py-12 sm:px-12 pb-24">
         <h2 className="text-3xl font-black text-text-main uppercase mb-4">{t.modelo.headline}</h2>
         <p className="text-text-main/60 mb-8 font-light">{t.modelo.intro}</p>
