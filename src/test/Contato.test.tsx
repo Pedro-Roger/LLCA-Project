@@ -3,16 +3,14 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
 import Contato from '../pages/Contato';
-import { LangContext, ThemeContext } from '../App';
+import { LangContext } from '../App';
 import { translations } from '../translations';
 
 const renderContato = (lang: 'pt' | 'en' = 'pt') =>
   render(
     <MemoryRouter>
       <LangContext.Provider value={{ lang, setLang: () => {} }}>
-        <ThemeContext.Provider value={{ isDark: true, toggleTheme: () => {} }}>
           <Contato />
-        </ThemeContext.Provider>
       </LangContext.Provider>
     </MemoryRouter>
   );

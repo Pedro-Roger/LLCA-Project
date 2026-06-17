@@ -10,16 +10,44 @@ export default function Contato() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'producer', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+
+    if (!FORMSPREE_ID) {
+      setError('Formulário não configurado. Adicione VITE_FORMSPREE_ID no .env');
+      return;
+    }
+
     setIsSubmitting(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          assunto: formData.subject,
+          mensagem: formData.message,
+        }),
+      });
+      if (res.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: 'producer', message: '' });
+        setTimeout(() => setIsSubmitted(false), 6000);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setError((data as { error?: string }).error ?? 'Erro ao enviar. Tente novamente.');
+      }
+    } catch {
+      setError('Sem conexão. Verifique sua internet e tente novamente.');
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: 'producer', message: '' });
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -64,13 +92,13 @@ export default function Contato() {
                 <p className="text-text-main/50 text-sm">{t.info.cnpj}</p>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-border-main">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-bg-app border border-border-main">
                   <div className="w-10 h-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <p className="text-text-main text-sm">{t.info.location}</p>
                 </div>
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-border-main">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-bg-app border border-border-main">
                   <div className="w-10 h-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
@@ -85,8 +113,14 @@ export default function Contato() {
               <AnimatePresence>
                 {isSubmitted && (
                   <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-                    className="bg-green-500/20 border border-green-500 text-green-700 dark:text-green-200 px-5 py-3 rounded-2xl text-sm font-medium">
-                    Mensagem enviada! Entraremos em contato em breve.
+                    className="bg-forest/10 border border-forest text-forest px-5 py-3 rounded-2xl text-sm font-medium">
+                    ✓ Mensagem enviada! Entraremos em contato em breve.
+                  </motion.div>
+                )}
+                {error && (
+                  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
+                    className="bg-red-50 border border-red-300 text-red-700 px-5 py-3 rounded-2xl text-sm font-medium">
+                    {error}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -94,18 +128,18 @@ export default function Contato() {
                 <label className="text-xs font-bold text-text-main/50 uppercase tracking-wider">{t.form.name}</label>
                 <input type="text" name="name" required value={formData.name} onChange={handleChange}
                   placeholder={t.form.namePlaceholder}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all text-sm" />
+                  className="w-full bg-bg-app border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all text-sm" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-text-main/50 uppercase tracking-wider">{t.form.email}</label>
                 <input type="email" name="email" required value={formData.email} onChange={handleChange}
                   placeholder={t.form.emailPlaceholder}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all text-sm" />
+                  className="w-full bg-bg-app border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all text-sm" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-text-main/50 uppercase tracking-wider">{t.form.subject}</label>
                 <select name="subject" value={formData.subject} onChange={handleChange}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-border-main rounded-2xl px-5 py-3.5 text-text-main outline-none transition-all appearance-none cursor-pointer text-sm focus:border-secondary/50">
+                  className="w-full bg-bg-app border border-border-main rounded-2xl px-5 py-3.5 text-text-main outline-none transition-all appearance-none cursor-pointer text-sm focus:border-secondary/50">
                   <option value="producer" className="bg-bg-app">{t.form.subjects.producer}</option>
                   <option value="partner" className="bg-bg-app">{t.form.subjects.partner}</option>
                   <option value="researcher" className="bg-bg-app">{t.form.subjects.researcher}</option>
@@ -116,7 +150,7 @@ export default function Contato() {
                 <label className="text-xs font-bold text-text-main/50 uppercase tracking-wider">{t.form.message}</label>
                 <textarea name="message" required value={formData.message} onChange={handleChange}
                   placeholder={t.form.messagePlaceholder} rows={4}
-                  className="w-full bg-black/5 dark:bg-white/5 border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all resize-none text-sm" />
+                  className="w-full bg-bg-app border border-border-main rounded-2xl px-5 py-3.5 text-text-main placeholder:text-text-main/30 focus:border-secondary/50 outline-none transition-all resize-none text-sm" />
               </div>
               <button type="submit" disabled={isSubmitting}
                 className={`w-full rounded-2xl bg-secondary px-6 py-4 text-sm font-bold text-white hover:brightness-110 transition-all flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>

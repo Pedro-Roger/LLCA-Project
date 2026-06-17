@@ -3,16 +3,14 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
 import Historia from '../pages/Historia';
-import { LangContext, ThemeContext } from '../App';
+import { LangContext } from '../App';
 import { translations } from '../translations';
 
 const renderHistoria = (lang: 'pt' | 'en' = 'pt') =>
   render(
     <MemoryRouter>
       <LangContext.Provider value={{ lang, setLang: () => {} }}>
-        <ThemeContext.Provider value={{ isDark: true, toggleTheme: () => {} }}>
           <Historia />
-        </ThemeContext.Provider>
       </LangContext.Provider>
     </MemoryRouter>
   );

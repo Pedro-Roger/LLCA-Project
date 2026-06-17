@@ -12,8 +12,8 @@ export const translations = {
       join: 'Faça parte',
     },
     hero: {
-      subtitle: 'Uma plataforma biológica que regenera ecossistemas vivos — do solo ao corpo humano.',
-      cta1: 'Conheça a plataforma',
+      subtitle: 'Transformando o conhecimento científico em ferramentas para um mundo mais sustentável através da biotecnologia.',
+      cta1: 'Nosso trabalho',
       cta2: 'Nossa história',
     },
     home: {
@@ -274,8 +274,8 @@ export const translations = {
       join: 'Join Us',
     },
     hero: {
-      subtitle: 'A biological platform that regenerates living ecosystems — from soil to the human body.',
-      cta1: 'Explore the platform',
+      subtitle: 'Transforming scientific knowledge into tools for a more sustainable world through biotechnology.',
+      cta1: 'Our work',
       cta2: 'Our story',
     },
     home: {

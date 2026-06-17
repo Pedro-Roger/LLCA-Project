@@ -4,7 +4,7 @@ import type { Post } from '../mocks/blogPosts';
 
 const categoryColor: Record<string, string> = {
   'Ciência':       'bg-moss/20 text-forest',
-  'Institucional': 'bg-navy/10 text-navy dark:bg-moss/10 dark:text-moss',
+  'Institucional': 'bg-navy/10 text-navy',
   'Mercado':       'bg-forest/10 text-forest',
   'Meio Ambiente': 'bg-moss/30 text-forest',
 };

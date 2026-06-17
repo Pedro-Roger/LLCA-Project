@@ -11,7 +11,7 @@ export default function Tecnologia() {
     <div className="flex flex-col gap-4 pt-24">
       {/* BLOCK 1 — VIRADA DE PARADIGMA */}
       <section className="px-6 py-16 sm:px-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="">
           <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Ciência & Tecnologia</span>
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
@@ -66,12 +66,12 @@ export default function Tecnologia() {
       <section className="px-6 py-12 sm:px-12">
         <h2 className="text-3xl font-black text-text-main uppercase mb-8">{t.diferente.headline}</h2>
         <div className="rounded-4xl border border-border-main bg-card-bg overflow-hidden">
-          <div className="grid grid-cols-2 bg-black/5 dark:bg-white/5 border-b border-border-main">
+          <div className="grid grid-cols-2 bg-moss/10 border-b border-border-main">
             <div className="px-8 py-4 text-xs font-bold uppercase tracking-widest text-text-main/50">Indústria tradicional</div>
             <div className="px-8 py-4 text-xs font-bold uppercase tracking-widest text-secondary">Plataforma TMP</div>
           </div>
           {t.diferente.rows.map((row, idx) => (
-            <div key={idx} className={`grid grid-cols-2 border-b border-border-main last:border-0 ${idx % 2 === 0 ? '' : 'bg-black/5 dark:bg-white/5'}`}>
+            <div key={idx} className={`grid grid-cols-2 border-b border-border-main last:border-0 ${idx % 2 === 0 ? '' : 'bg-bg-app'}`}>
               <div className="px-8 py-5 text-text-main/50 text-sm font-light">{row.traditional}</div>
               <div className="px-8 py-5 text-text-main text-sm font-medium">{row.tmp}</div>
             </div>
@@ -79,14 +79,7 @@ export default function Tecnologia() {
         </div>
       </section>
 
-      {/* BLOCK 5 — INFRAESTRUTURA (placeholder) */}
-      <section className="px-6 py-12 sm:px-12">
-        <div className="rounded-4xl border border-border-main bg-card-bg h-48 flex items-center justify-center">
-          <p className="text-text-main/30 text-sm font-medium uppercase tracking-widest">Render 3D — Laboratório LLCA (em breve)</p>
-        </div>
-      </section>
-
-      {/* BLOCK 6 — MODELO DE OPERAÇÃO */}
+{/* BLOCK 6 — MODELO DE OPERAÇÃO */}
       <section className="px-6 py-12 sm:px-12 pb-24">
         <h2 className="text-3xl font-black text-text-main uppercase mb-4">{t.modelo.headline}</h2>
         <p className="text-text-main/60 mb-8 font-light">{t.modelo.intro}</p>
