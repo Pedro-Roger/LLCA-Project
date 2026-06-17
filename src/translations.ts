@@ -13,7 +13,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'Uma plataforma biológica que regenera ecossistemas vivos — do solo ao corpo humano.',
-      cta1: 'Conheça a plataforma',
+      cta1: 'Nosso trabalho',
       cta2: 'Nossa história',
     },
     home: {
@@ -249,7 +249,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Engenharia ecológica de microbiomas.',
+      tagline: 'Transformando o conhecimento científico em ferramentas para um mundo mais sustentável através da biotecnologia.',
       address: 'Pouso Alto, Minas Gerais — Brasil',
       nav: 'Navegação',
       contactLabel: 'Contato',
@@ -275,7 +275,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'A biological platform that regenerates living ecosystems — from soil to the human body.',
-      cta1: 'Explore the platform',
+      cta1: 'Our work',
       cta2: 'Our story',
     },
     home: {
@@ -511,7 +511,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Ecological microbiome engineering.',
+      tagline: 'Transforming scientific knowledge into tools for a more sustainable world through biotechnology.',
       address: 'Pouso Alto, Minas Gerais — Brazil',
       nav: 'Navigation',
       contactLabel: 'Contact',
